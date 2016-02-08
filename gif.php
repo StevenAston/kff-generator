@@ -28,7 +28,7 @@ $emailAddressVariables = array(
 	'size' => 40, // Font size, in pts usually.
 	'aOBngle' => 0, // Angle of the text
 	'x-offset' => 356, // The larger the number the further the distance from the left hand side, 0 to align to the left.
-	'y-offset' => 390, // The vertical alignment, trial and error between 20 and 60.
+	'y-offset' => 415, // The vertical alignment, trial and error between 20 and 60.
 	'file' => __DIR__ . DIRECTORY_SEPARATOR . 'helvetica.otf', // Font path
 	'color' => imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
 	);
