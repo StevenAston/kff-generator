@@ -40,7 +40,7 @@ $emailAddressVariables = array(
 
 // Open the first source image and add the text.
 $image = imagecreatefrompng('images/bg.png');
-$phoneNumber = '519-111-1111';
+//$phoneNumber = '519-111-1111';
 $phoneNumber = $_GET['number'];
 $emailAddress = 'Heather.heartfield@kff.ca';
 
