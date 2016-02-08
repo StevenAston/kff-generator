@@ -23,6 +23,8 @@ $phoneNumberVariables = array(
 	'y-offset' => 390, // The vertical alignment, trial and error between 20 and 60.
 	'file' => __DIR__ . DIRECTORY_SEPARATOR . 'helvetica.otf', // Font path
 	'color' => imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
+	'blurColor' => imagecolorallocate($image, 0, 0, 0), // RGB Colour of the text
+	'blur' => 6, // Blur amount
 	);
 
 $emailAddressVariables = array(
@@ -33,7 +35,7 @@ $emailAddressVariables = array(
 	'file' => __DIR__ . DIRECTORY_SEPARATOR . 'helvetica.otf', // Font path
 	'color' => imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
 	'blurColor' => imagecolorallocate($image, 0, 0, 0), // RGB Colour of the text
-	'blur' => 3, // Blur amount
+	'blur' => 6, // Blur amount
 	);
 
 // Open the first source image and add the text.
