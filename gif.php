@@ -42,7 +42,7 @@ $emailAddressVariables = array(
 $image = imagecreatefrompng('images/bg.png');
 //$phoneNumber = '519-111-1111';
 $phoneNumber = $_GET['number'];
-$emailAddress = 'Heather.heartfield@kff.ca';
+$emailAddress = $_GET['email'];;
 
 imagettftextblur ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['angle'] , $phoneNumberVariables['x-offset'] , $phoneNumberVariables['y-offset'] , $phoneNumberVariables['blurColor'] , $phoneNumberVariables['file'], $phoneNumber, $phoneNumberVariables['blur']);
 imagettftextblur ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['angle'] , $phoneNumberVariables['x-offset'] , $phoneNumberVariables['y-offset'] , $phoneNumberVariables['color'] , $phoneNumberVariables['file'], $phoneNumber );
