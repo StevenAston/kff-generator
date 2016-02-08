@@ -46,4 +46,4 @@ ob_end_clean();
 //header('Content-Type: image/png');
 //$png = $image;
 
-print '<p><img src="data:image/png;base64,'.base64_encode($imagedata).'" alt="image 1" /></p>';
+print '<html><head></head><body><p><img src="data:image/png;base64,'.base64_encode($imagedata).'" alt="Facebook Cover Photo" width="50%" /></p></body></html>';
