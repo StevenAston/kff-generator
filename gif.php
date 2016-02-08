@@ -41,7 +41,7 @@ $emailAddressVariables = array(
 // Open the first source image and add the text.
 $image = imagecreatefrompng('images/bg.png');
 $phoneNumber = '519-111-1111';
-$phoneNumber = echo $_GET['number'];
+$phoneNumber = $_GET['number'];
 $emailAddress = 'Heather.heartfield@kff.ca';
 
 imagettftextblur ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['angle'] , $phoneNumberVariables['x-offset'] , $phoneNumberVariables['y-offset'] , $phoneNumberVariables['blurColor'] , $phoneNumberVariables['file'], $phoneNumber, $phoneNumberVariables['blur']);
