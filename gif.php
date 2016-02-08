@@ -43,6 +43,9 @@ imagettftext ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['an
 imagettftext ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['color'] , $emailAddressVariables['file'], $emailAddress );
 ob_start();
 imagegif($image);
+$frames[]=ob_get_contents();
+$delays[]=$delay;
+$loops = 1;
 ob_end_clean();
 
 
