@@ -33,7 +33,7 @@ $emailAddressVariables = array(
 	'file' => __DIR__ . DIRECTORY_SEPARATOR . 'helvetica.otf', // Font path
 	'color' => imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
 	'blurColor' => imagecolorallocate($image, 0, 0, 0), // RGB Colour of the text
-	'blur' => 300, // Blur amount
+	'blur' => 3, // Blur amount
 	);
 
 // Open the first source image and add the text.
