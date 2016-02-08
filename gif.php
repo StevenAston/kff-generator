@@ -1,17 +1,6 @@
 <?php
-
-//Leave all this stuff as it is
-date_default_timezone_set('Europe/London');
-include 'GIFEncoder.class.php';
 include 'php52-fix.php';
 include 'imagettftextblur.php';
-$time = $_GET['time'];
-$future_date = new DateTime('2016-02-06 10:00:00');
-$time_now = time();
-$now = new DateTime(date('r', $time_now));
-$frames = array();
-$delays = array();
-
 
 // Your image link
 $image = imagecreatefrompng('images/bg.png');
@@ -40,7 +29,6 @@ $emailAddressVariables = array(
 
 // Open the first source image and add the text.
 $image = imagecreatefrompng('images/bg.png');
-//$phoneNumber = '519-111-1111';
 $phoneNumber = $_GET['number'];
 $emailAddress = $_GET['email'];;
 
@@ -49,18 +37,15 @@ imagettftextblur ($image , $phoneNumberVariables['size'] , $phoneNumberVariables
 imagettftextblur ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['blurColor'] , $emailAddressVariables['file'], $emailAddress, $emailAddressVariables['blur']);
 imagettftextblur ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['color'] , $emailAddressVariables['file'], $emailAddress );
 ob_start();
-imagegif($image);
-$frames[]=ob_get_contents();
-$delays[]=$delay;
-$loops = 1;
+imagepng($image);
 ob_end_clean();
 
 
 //expire this image instantly
-header( 'Expires: Sat, 26 Jul 1997 05:00:00 GMT' );
-header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s' ) . ' GMT' );
-header( 'Cache-Control: no-store, no-cache, must-revalidate' );
-header( 'Cache-Control: post-check=0, pre-check=0', false );
-header( 'Pragma: no-cache' );
-$gif = new AnimatedGif($frames,$delays,$loops);
-$gif->display();
+//header( 'Expires: Sat, 26 Jul 1997 05:00:00 GMT' );
+//header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s' ) . ' GMT' );
+//header( 'Cache-Control: no-store, no-cache, must-revalidate' );
+//header( 'Cache-Control: post-check=0, pre-check=0', false );
+//header( 'Pragma: no-cache' );
+$png = $image;
+$png->display();
