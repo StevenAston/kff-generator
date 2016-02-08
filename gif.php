@@ -36,17 +36,14 @@ imagettftextblur ($image , $phoneNumberVariables['size'] , $phoneNumberVariables
 imagettftextblur ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['angle'] , $phoneNumberVariables['x-offset'] , $phoneNumberVariables['y-offset'] , $phoneNumberVariables['color'] , $phoneNumberVariables['file'], $phoneNumber );
 imagettftextblur ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['blurColor'] , $emailAddressVariables['file'], $emailAddress, $emailAddressVariables['blur']);
 imagettftextblur ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['color'] , $emailAddressVariables['file'], $emailAddress );
+
 ob_start();
 imagepng($image);
+$imagedata = ob_get_contents();
 ob_end_clean();
 
-
 //expire this image instantly
-header( 'Expires: Sat, 26 Jul 1997 05:00:00 GMT' );
-header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s' ) . ' GMT' );
-header( 'Cache-Control: no-store, no-cache, must-revalidate' );
-header( 'Cache-Control: post-check=0, pre-check=0', false );
-header( 'Pragma: no-cache' );
-header('Content-Type: image/png');
-$png = $image;
-$png->display();
+//header('Content-Type: image/png');
+//$png = $image;
+
+print '<p><img src="data:image/png;base64,'.base64_encode($imagedata).'" alt="image 1" /></p>';
