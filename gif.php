@@ -17,7 +17,7 @@ $delays = array();
 $image = imagecreatefrompng('images/bg.png');
 
 $phoneNumberVariables = array(
-	'size' => 40, // Font size, in pts usually.
+	'size' => 36, // Font size, in pts usually.
 	'aOBngle' => 0, // Angle of the text
 	'x-offset' => 390, // The larger the number the further the distance from the left hand side, 0 to align to the left.
 	'y-offset' => 390, // The vertical alignment, trial and error between 20 and 60.
@@ -28,7 +28,7 @@ $phoneNumberVariables = array(
 	);
 
 $emailAddressVariables = array(
-	'size' => 40, // Font size, in pts usually.
+	'size' => 36, // Font size, in pts usually.
 	'aOBngle' => 0, // Angle of the text
 	'x-offset' => 390, // The larger the number the further the distance from the left hand side, 0 to align to the left.
 	'y-offset' => 455, // The vertical alignment, trial and error between 20 and 60.
