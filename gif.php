@@ -32,6 +32,8 @@ $emailAddressVariables = array(
 	'y-offset' => 450, // The vertical alignment, trial and error between 20 and 60.
 	'file' => __DIR__ . DIRECTORY_SEPARATOR . 'helvetica.otf', // Font path
 	'color' => imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
+	'blurColor' => imagecolorallocate($image, 0, 0, 0), // RGB Colour of the text
+	'blur' => 3, // Blur amount
 	);
 
 // Open the first source image and add the text.
@@ -39,6 +41,7 @@ $image = imagecreatefrompng('images/bg.png');
 $phoneNumber = '519-111-1111';
 $emailAddress = 'Heather.heartfield@kff.ca';
 
+imagettftextblur ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['angle'] , $phoneNumberVariables['x-offset'] , $phoneNumberVariables['y-offset'] , $phoneNumberVariables['blurColor'] , $phoneNumberVariables['file'], $phoneNumber, $phoneNumberVariables['blur']);
 imagettftext ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['angle'] , $phoneNumberVariables['x-offset'] , $phoneNumberVariables['y-offset'] , $phoneNumberVariables['color'] , $phoneNumberVariables['file'], $phoneNumber );
 imagettftext ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['color'] , $emailAddressVariables['file'], $emailAddress );
 ob_start();
