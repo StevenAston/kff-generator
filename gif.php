@@ -15,7 +15,16 @@ $delays = array();
 // Your image link
 $image = imagecreatefrompng('images/bg.png');
 
-$font = array(
+$phoneNumberVariables = array(
+	'size' => 40, // Font size, in pts usually.
+	'aOBngle' => 0, // Angle of the text
+	'x-offset' => 356, // The larger the number the further the distance from the left hand side, 0 to align to the left.
+	'y-offset' => 390, // The vertical alignment, trial and error between 20 and 60.
+	'file' => __DIR__ . DIRECTORY_SEPARATOR . 'helvetica.otf', // Font path
+	'color' => imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
+	);
+
+$emailAddressVariables = array(
 	'size' => 40, // Font size, in pts usually.
 	'aOBngle' => 0, // Angle of the text
 	'x-offset' => 356, // The larger the number the further the distance from the left hand side, 0 to align to the left.
@@ -26,9 +35,11 @@ $font = array(
 
 // Open the first source image and add the text.
 $image = imagecreatefrompng('images/bg.png');
-;
-$text = '519-111-1111';
-imagettftext ($image , $font['size'] , $font['angle'] , $font['x-offset'] , $font['y-offset'] , $font['color'] , $font['file'], $text );
+$phoneNumber = '519-111-1111';
+$emailAddress = 'Heather.heartfield@kff.ca';
+
+imagettftext ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['angle'] , $phoneNumberVariables['x-offset'] , $phoneNumberVariables['y-offset'] , $phoneNumberVariables['color'] , $phoneNumberVariables['file'], $phoneNumber );
+imagettftext ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['color'] , $emailAddressVariables['file'], $emailAddress );
 ob_start();
 imagegif($image);
 $frames[]=ob_get_contents();
