@@ -4,6 +4,7 @@
 date_default_timezone_set('Europe/London');
 include 'GIFEncoder.class.php';
 include 'php52-fix.php';
+include 'imagettftextblur.php';
 $time = $_GET['time'];
 $future_date = new DateTime('2016-02-06 10:00:00');
 $time_now = time();
@@ -42,9 +43,6 @@ imagettftext ($image , $phoneNumberVariables['size'] , $phoneNumberVariables['an
 imagettftext ($image , $emailAddressVariables['size'] , $emailAddressVariables['angle'] , $emailAddressVariables['x-offset'] , $emailAddressVariables['y-offset'] , $emailAddressVariables['color'] , $emailAddressVariables['file'], $emailAddress );
 ob_start();
 imagegif($image);
-$frames[]=ob_get_contents();
-$delays[]=$delay;
-$loops = 1;
 ob_end_clean();
 
 
